@@ -1,0 +1,258 @@
+@font-face {
+            font-family: gunplay;
+            src: url(gunplay.ttf);
+           }
+body{
+  background-color:#4d4d4d;
+  margin: 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+#main-header{
+  background-color: #313131;
+ color: #e6e6e6;
+ font-family: gunplay;
+ text-align: center;
+ margin-top: 20px;
+ font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#navbar{
+  background-color: #313131;
+  color: #e6e6e6;
+}
+
+#navbar ul{
+  padding: 0;
+  list-style: none;
+}
+
+#navbar li{
+  display: inline;
+}
+
+#navbar a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 15px;
+}
+
+#navbar a:hover{
+  background-color: #4d4d4d;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  padding-top: 20px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.captiontext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/4) */
+.numbertext {
+  color: #000000;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 15px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+#main-footer{
+  background-color: #313131;
+  color: #e6e6e6;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+}
+
+.header {
+    margin: 20px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background: #313131;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 15%;
+    margin: 20px;
+    margin-left: 125px;
+    float: left;
+}
+
+.cardDescription {
+    display: none;
+    position: absolute;
+    background-color: #313131;
+    color: white;
+    max-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover .cardDescription{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: block;
+}
+
+/* Add some padding inside the card container */
+.containerSmall {
+    background: #313131;
+    padding: 2px 16px;
+    color: white;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.containerRecruitLeft {
+    width: 45%;
+    margin: auto;
+    margin-top: 40px;
+    overflow: hidden;
+    float:left;
+}
+
+.containerRecruitRight {
+    width: 45%;
+    margin: auto;
+    margin-top: 40px;
+    overflow: hidden;
+    float: right;
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
