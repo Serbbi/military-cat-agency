@@ -44,8 +44,7 @@ npm install
 cd mca-backend
 npm run dev
 ```
-- The backend will start on a random port (e.g., `http://localhost:63078`).
-- Note the port number printed in the terminal.
+- The backend will start on port `http://localhost:53422`
 
 ### Start the Frontend
 ```sh

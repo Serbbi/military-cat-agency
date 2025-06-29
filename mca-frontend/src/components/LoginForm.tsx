@@ -27,7 +27,7 @@ export function LoginForm({ onLoginSuccess, onSwitchToRegister }: LoginFormProps
     setError('')
 
     try {
-      const response = await axios.post('http://localhost:63078/auth/login', {
+      const response = await axios.post('http://localhost:53422/auth/login', {
         email,
         password,
       }, {
@@ -49,24 +49,24 @@ export function LoginForm({ onLoginSuccess, onSwitchToRegister }: LoginFormProps
   return (
     <div className="w-full max-w-md space-y-8">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
           Welcome back
         </h2>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-muted-foreground">
           Sign in to your account
         </p>
       </div>
 
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md text-sm">
+          <div className="bg-destructive/10 border border-destructive/20 text-destructive px-4 py-3 rounded-md text-sm">
             {error}
           </div>
         )}
 
         <div className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-foreground">
               Email address
             </label>
             <input
@@ -77,13 +77,13 @@ export function LoginForm({ onLoginSuccess, onSwitchToRegister }: LoginFormProps
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-3 py-2 border border-input rounded-md shadow-sm placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring bg-background"
               placeholder="Enter your email"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm font-medium text-foreground">
               Password
             </label>
             <input
@@ -94,7 +94,7 @@ export function LoginForm({ onLoginSuccess, onSwitchToRegister }: LoginFormProps
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-3 py-2 border border-input rounded-md shadow-sm placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring bg-background"
               placeholder="Enter your password"
             />
           </div>
@@ -114,7 +114,7 @@ export function LoginForm({ onLoginSuccess, onSwitchToRegister }: LoginFormProps
           <button
             type="button"
             onClick={onSwitchToRegister}
-            className="text-sm text-blue-600 hover:text-blue-500 font-medium"
+            className="text-sm text-primary hover:text-primary/80 font-medium"
           >
             Don't have an account? Sign up
           </button>

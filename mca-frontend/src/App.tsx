@@ -26,7 +26,7 @@ function App() {
 
   const checkAuthStatus = async () => {
     try {
-      const response = await axios.get('http://localhost:63078/auth/user', {
+      const response = await axios.get('http://localhost:53422/auth/user', {
         withCredentials: true,
       })
       if (response.data.success) {
@@ -64,8 +64,8 @@ function App() {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Loading...</p>
         </div>
       </div>
     )
@@ -76,20 +76,20 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold text-foreground mb-2">
             Military Cat Agency
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Secure authentication system
           </p>
         </div>
       </div>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-card py-8 px-4 shadow-lg rounded-lg sm:px-10 border">
           {authMode === 'login' ? (
             <LoginForm 
               onLoginSuccess={handleLoginSuccess}

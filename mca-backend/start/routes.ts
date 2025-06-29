@@ -102,3 +102,40 @@ router.get('/protected', async ({ auth, response }) => {
     })
   }
 })
+
+// Delete account endpoint
+router.post('/auth/delete-account', async ({ request, auth, response }) => {
+  try {
+    await auth.use('web').authenticate()
+    const user = auth.user
+    if (!user) {
+      return response.status(401).json({
+        success: false,
+        message: 'Not authenticated',
+      })
+    }
+    const { password } = request.only(['password'])
+    // Import hash service
+    const hashModule = await import('@adonisjs/core/services/hash')
+    const hash = hashModule.default
+    const isValid = await hash.verify(user.password, password)
+    if (!isValid) {
+      return response.status(401).json({
+        success: false,
+        message: 'Invalid password',
+      })
+    }
+    await user.delete()
+    await auth.use('web').logout()
+    return response.json({
+      success: true,
+      message: 'Account deleted successfully',
+    })
+  } catch (error) {
+    return response.status(500).json({
+      success: false,
+      message: 'Failed to delete account',
+      error: error.message,
+    })
+  }
+})
