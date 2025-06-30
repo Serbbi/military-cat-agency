@@ -62,3 +62,36 @@ military-cat-agency/
   ├── mca-frontend/     # React + Vite frontend (UI)
   └── mca.db            # SQLite database file
 ```
+
+# Docker Compose Development
+
+## Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows/Mac)
+- [Docker Engine](https://docs.docker.com/engine/install/) (Linux)
+
+## Quick Start
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-org/military-cat-agency.git
+   cd military-cat-agency
+   ```
+2. Start the app with Docker Compose:
+   ```sh
+   docker-compose up --build
+   ```
+   - The backend will be available at [http://localhost:53422](http://localhost:53422)
+   - The frontend will be available at [http://localhost:5173](http://localhost:5173)
+
+3. The backend `.env` file will be auto-generated from `.env.example` if missing.
+
+4. Code changes will hot-reload in both frontend and backend containers.
+
+## Customization
+- To change the backend port, edit `mca-backend/.env.example` and update `docker-compose.yml` accordingly.
+- To point the frontend to a different backend, set `VITE_API_URL` in `docker-compose.yml` under the `frontend` service.
+
+## Stopping
+```sh
+docker-compose down
+```

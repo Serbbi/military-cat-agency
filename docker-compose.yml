@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./mca-backend
+    ports:
+      - "53422:53422"
+    volumes:
+      - ./mca-backend:/app
+    environment:
+      - NODE_ENV=development
+    command: sh -c "[ -f .env ] || cp .env.example .env && npm run dev"
+    working_dir: /app
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./mca-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./mca-frontend:/app
+    environment:
+      - VITE_API_URL=http://localhost:53422
+    command: npm run dev -- --host
+    working_dir: /app
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge 

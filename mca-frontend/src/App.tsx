@@ -19,6 +19,8 @@ function App() {
   const [authMode, setAuthMode] = useState<AuthMode>('login')
   const [isLoading, setIsLoading] = useState(true)
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:53422'
+
   useEffect(() => {
     // Check if user is already authenticated on app load
     checkAuthStatus()
@@ -26,7 +28,7 @@ function App() {
 
   const checkAuthStatus = async () => {
     try {
-      const response = await axios.get('http://localhost:53422/auth/user', {
+      const response = await axios.get(`${API_URL}/auth/user`, {
         withCredentials: true,
       })
       if (response.data.success) {
