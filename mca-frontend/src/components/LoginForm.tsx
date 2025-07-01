@@ -21,15 +21,13 @@ export function LoginForm({ onLoginSuccess, onSwitchToRegister }: LoginFormProps
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:53422'
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     setError('')
 
     try {
-      const response = await axios.post(`${API_URL}/auth/login`, {
+      const response = await axios.post('http://localhost:53422/auth/login', {
         email,
         password,
       }, {
